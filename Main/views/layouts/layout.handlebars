@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resume builder</title>
+	<link rel="stylesheet" href="/css/bootstrap.css"/>
+	<link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">Resume Builder</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        {{#if user}}
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/users/logout">Logout</a>
+        {{else}}
+        <a class="nav-link" href="/users/login">Login</a>
+        <a class="nav-link" href="/users/register">Resgister </a>
+        {{/if}}
+      </nav>
+    </div>
+  </header>
+  {{#if success_msg}}
+  <div class="alert alert-success">{{success_msg}}</div>
+  {{/if}}
+  {{#if error_msg}}
+  <div class="alert alert-danger">{{error_msg}}</div>
+  {{/if}}
+  {{#if error}}
+  <div class="alert alert-danger">{{error}}</div>
+  {{/if}}
+ {{{body}}}
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>Build your Resume.</p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
